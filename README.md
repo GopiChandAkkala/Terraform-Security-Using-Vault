@@ -8,6 +8,12 @@
 
 ![image](https://github.com/GopiChandAkkala/Terraform-Security-Using-Vault/assets/53532507/e171a3f2-8ef7-4cf2-8c56-c15c97c5cd40)
 
+state file is getting stored in the s3 bucket as a backend
+
 ![image](https://github.com/GopiChandAkkala/Terraform-Security-Using-Vault/assets/53532507/54128234-d838-427c-b56b-b13828802777)
 
+
+Tag name is pulled from the Vault and assigned it to ec2 instance tag:
+
+![image](https://github.com/GopiChandAkkala/Terraform-Security-Using-Vault/assets/53532507/5efadd08-59f4-4a27-844b-025e80cb58e4)
 

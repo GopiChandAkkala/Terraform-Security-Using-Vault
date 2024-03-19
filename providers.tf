@@ -1,25 +1,16 @@
-data "vault_generic_secret" "aws_creds" {
-    path = "my-secret/aws_cred"
-    
-}
-
-data "vault_generic_secret" "tag-name" {
-    path = "my-secret/tag-name"
-    
-}
-
-resource "aws_instance" "cicd-ec2" {
-  ami           = "ami-0230bd60aa48260c6"
-  instance_type = "t2.micro"
-  key_name      = "my-keypair"
-  
-  
-
-  tags = {
-    Name = data.vault_generic_secret.tag-name.data["ec2-tag"]
+terraform {
+  required_providers {
+    vault = {
+      source = "hashicorp/vault"
+      version = "4.0.0"
+    }
   }
 }
-
-output "ec2_instance_public_ip" {
-  value = aws_instance.cicd-ec2.public_ip
+provider "vault" {
+  address = "http://127.0.0.1:8200"
 }
+provider "aws" {
+  region   = "us-east-1"
+  access_key = data.vault_generic_secret.aws_creds.data["aws_access_key_id"]
+  secret_key = data.vault_generic_secret.aws_creds.data["aws_secret_access_key"]
+  }

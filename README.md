@@ -6,3 +6,6 @@
 
 ![image](https://github.com/GopiChandAkkala/Terraform-Security-Using-Vault/assets/53532507/7a790dae-e9f0-465e-9cc8-bbce3543b576)
 
+![image](https://github.com/GopiChandAkkala/Terraform-Security-Using-Vault/assets/53532507/e171a3f2-8ef7-4cf2-8c56-c15c97c5cd40)
+
+
